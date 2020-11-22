@@ -21,7 +21,7 @@ function errorCallback() {
 //API Calling
 
 function apiCall(lat, lon) {
-  let api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   fetch(api)
     .then(res => res.json())
     .then(data => {
@@ -37,7 +37,7 @@ function displayWeather() {
   let newTemp = document.querySelector(".temprature-value");
   let newHumid = document.querySelector(".humidity-value");
   let newNotification = document.querySelector(".notification");
-  document.getElementById("image").src="http://openweathermap.org/img/wn/"+weatherProperties.icon+"@2x.png";
+  document.getElementById("image").src="https://openweathermap.org/img/wn/"+weatherProperties.icon+"@2x.png";
   newTemp.innerHTML = `Temprature ${weatherProperties.temp}<span>°C</span>`;
   newHumid.innerHTML= `<span>Humidity</span> ${weatherProperties.humidity} %`;
   newNotification.innerHTML = weatherProperties.location;
